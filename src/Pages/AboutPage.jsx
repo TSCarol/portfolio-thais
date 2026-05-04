@@ -39,17 +39,37 @@ export default function AboutPage() {
 
       </section>
 
-      {/* SEGUNDA SEÇÃO */}
-      <AboutContent />
+      {/* TRAJETÓRIA */}
+      <section id="trajetoria">
+        <AboutContent />
+      </section>
 
-      {/* TERCEIRA SEÇÃO 👇 */}
-      <Process />
-      <Experience />
-      <Differentials />
-      <Education />
-      <Skills />
+      {/* PROCESSO */}
+      <section id="processo">
+        <Process />
+      </section>
+
+      {/* EXPERIÊNCIA */}
+      <section id="experiencia">
+        <Experience />
+      </section>
+
+      {/* DIFERENCIAIS */}
+      <section id="diferenciais">
+        <Differentials />
+      </section>
+
+      {/* FORMAÇÃO */}
+      <section id="formacao">
+        <Education />
+      </section>
+
+      {/* SKILLS */}
+      <section id="skills">
+        <Skills />
+      </section>
+
       <Footer />
-
     </>
   )
 }

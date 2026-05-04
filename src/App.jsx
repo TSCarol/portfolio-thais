@@ -8,6 +8,7 @@ import Footer from "./components/Footer"
 import Header from "./components/Header"
 
 import AboutPage from "./Pages/AboutPage"
+import Case1 from "./Pages/Case1" // 👈 NOVO IMPORT
 
 function Home() {
   return (
@@ -28,6 +29,10 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/sobre" element={<AboutPage />} />
+
+        {/* 👇 NOVA ROTA DO CASE */}
+        <Route path="/case1" element={<Case1 />} />
+
       </Routes>
     </BrowserRouter>
   )

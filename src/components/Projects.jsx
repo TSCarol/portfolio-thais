@@ -1,4 +1,6 @@
 import { useEffect, useRef } from "react"
+import { Link } from "react-router-dom"
+
 import Mockup1 from "../assets/Mockup1.png"
 import Mockup2 from "../assets/Mockup2.png"
 import Mockup3 from "../assets/Mockup3.png"
@@ -26,6 +28,43 @@ export default function Projects() {
     return () => observer.disconnect()
   }, [])
 
+  // 👇 AGORA COM TAG
+  const projects = [
+    {
+      tag: "Aplicativo",
+      img: Mockup1,
+      title: "Plataforma de fidelização",
+      description: "SaaS focado em recorrência e relacionamento com clientes.",
+      details:
+        "Solução completa com gestão de clientes, pagamentos e comunicação.",
+      link: "/case1",
+    },
+    {
+      tag: "Website",
+      img: Mockup2,
+      title: "Projeto 2",
+      description: "Descrição curta do projeto.",
+      details: "Descrição mais detalhada.",
+      link: "/",
+    },
+    {
+      tag: "Dashboard",
+      img: Mockup3,
+      title: "Projeto 3",
+      description: "Descrição curta do projeto.",
+      details: "Descrição mais detalhada.",
+      link: "/",
+    },
+    {
+      tag: "Landing Page",
+      img: Mockup4,
+      title: "Projeto 4",
+      description: "Descrição curta do projeto.",
+      details: "Descrição mais detalhada.",
+      link: "/",
+    },
+  ]
+
   return (
     <section id="projetos" className="projects container">
 
@@ -44,29 +83,35 @@ export default function Projects() {
       </div>
 
       <div className="projects-grid">
-
-        {[Mockup1, Mockup2, Mockup3, Mockup4].map((img, index) => (
+        {projects.map((project, index) => (
           <div
             className="project-card"
             key={index}
             ref={(el) => (cardsRef.current[index] = el)}
           >
-            <img src={img} alt="" />
+            <img src={project.img} alt={project.title} />
 
             <div className="project-overlay">
-              <span>PROJETO</span>
-              <h3>Título do projeto</h3>
-              <p>Descrição curta</p>
+              
+              {/* 👇 TAG DINÂMICA */}
+              <span>{project.tag}</span>
+
+              <h3>{project.title}</h3>
+              <p>{project.description}</p>
 
               <div className="extra">
-                <p>Descrição mais detalhada do projeto.</p>
-                <span className="project-link">Ver projeto →</span>
+                <p>{project.details}</p>
+
+                <Link to={project.link} className="project-link">
+                  Ver projeto →
+                </Link>
               </div>
+
             </div>
           </div>
         ))}
-
       </div>
+
     </section>
   )
 }
