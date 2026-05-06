@@ -4,6 +4,13 @@ import BeforeAfter from "../components/BeforeAfter"
 import mockup from "../assets/mockup-case1.png"
 import Objectives from "../components/Objectives"
 import Strategy from "../components/Strategy"
+import Features from "../components/Features"
+import UserJourney from "../components/UserJourney"
+import UxDecision from "../components/UxDecision"
+import CollaborationSection from "../components/Collaboration"
+import ResultsSection from "../components/Results"
+import LearningsSection from "../components/Learnings"
+import Footer from "../components/Footer"
 
 export default function Case1() {
   return (
@@ -44,6 +51,13 @@ export default function Case1() {
       <BeforeAfter />
       <Objectives />
       <Strategy />
+      <Features />
+      <UserJourney />
+      <UxDecision />
+      <CollaborationSection />
+      <ResultsSection />
+      <LearningsSection />
+      <Footer />
 
     </>
   )
