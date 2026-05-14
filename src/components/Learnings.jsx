@@ -61,7 +61,7 @@ export default function LearningsSection() {
 
             <div className="learning-item">
               <span>DURAÇÃO</span>
-              <h3>6 meses</h3>
+              <h3>2 meses</h3>
             </div>
 
             <div className="learning-item">

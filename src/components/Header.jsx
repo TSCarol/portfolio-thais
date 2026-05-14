@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react"
-import { Link, useLocation } from "react-router-dom"
+import { Link } from "react-router-dom"
 import logo from "../assets/Logo Thais Thais.svg"
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
-  const location = useLocation()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -12,11 +11,9 @@ export default function Header() {
     }
 
     window.addEventListener("scroll", handleScroll)
+
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
-
-  const isHome = location.pathname === "/"
-  const isAbout = location.pathname === "/sobre"
 
   return (
     <header className={`header ${scrolled ? "scrolled" : ""}`}>
@@ -24,40 +21,36 @@ export default function Header() {
 
         {/* LOGO */}
         <Link to="/">
-          <img src={logo} alt="Logo Thaís Santos" className="logo-img" />
+          <img
+            src={logo}
+            alt="Logo Thaís Santos"
+            className="logo-img"
+          />
         </Link>
 
         {/* MENU */}
         <nav>
-
-          {/* HOME */}
           <Link to="/">Home</Link>
 
-          {/* 👇 SE ESTIVER NA HOME */}
-          {isHome && (
-            <>
-              <a href="#projetos">Projetos</a>
-              <Link to="/sobre">Sobre mim</Link>
-              <a href="#contact">Contato</a>
-            </>
-          )}
+          <a href="/#projetos">
+            Projetos
+          </a>
 
-          {/* 👇 SE ESTIVER NA ABOUT */}
-          {isAbout && (
-            <>
-              <a href="#trajetoria">Trajetória</a>
-              <a href="#processo">Processo</a>
-              <a href="#experiencia">Experiência</a>
-              <a href="#diferenciais">Diferenciais</a>
-              <a href="#formacao">Formação</a>
-              <a href="#skills">Skills</a>
-            </>
-          )}
+          <Link to="/sobre">
+            Sobre mim
+          </Link>
 
+          <a href="/#contact">
+            Contato
+          </a>
         </nav>
 
         {/* BOTÃO */}
-        <a href="/Curriculo Product Design UXUI.pdf" download className="btn-outline">
+        <a
+          href="/Curriculo Product Design UXUI.pdf"
+          download
+          className="btn-outline"
+        >
           Baixar currículo ↓
         </a>
 

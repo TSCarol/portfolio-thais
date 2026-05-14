@@ -1,5 +1,8 @@
 import { useEffect, useRef } from "react"
 
+import Empresa from "../assets/Empresa.svg"
+import User from "../assets/User.svg"
+
 export default function UsersSection() {
   const cardsRef = useRef([])
   const headerRef = useRef(null)
@@ -16,7 +19,9 @@ export default function UsersSection() {
       { threshold: 0.2 }
     )
 
-    if (headerRef.current) observer.observe(headerRef.current)
+    if (headerRef.current) {
+      observer.observe(headerRef.current)
+    }
 
     cardsRef.current.forEach((card) => {
       if (card) observer.observe(card)
@@ -29,12 +34,14 @@ export default function UsersSection() {
     {
       title: "Donos / Marcas",
       text: "Empresas que buscam organizar o relacionamento com clientes, aumentar a recorrência e ter mais controle sobre operações como eventos, planos e vendas.",
-      variant: "dark"
+      variant: "dark",
+      icon: Empresa
     },
     {
       title: "Clientes / Torcedores",
       text: "Usuários que consomem serviços e participam de eventos, buscando praticidade, acesso rápido e uma experiência fluida.",
-      variant: "light"
+      variant: "light",
+      icon: User
     }
   ]
 
@@ -63,18 +70,26 @@ export default function UsersSection() {
 
         {/* DIREITA */}
         <div className="users-right">
+
           {users.map((user, index) => (
             <div
               key={index}
               className={`user-card ${user.variant}`}
               ref={(el) => (cardsRef.current[index] = el)}
             >
-              <div className="user-icon" />
+
+              {/* ÍCONE */}
+              <div className="user-icon">
+                <img src={user.icon} alt="" />
+              </div>
 
               <h3>{user.title}</h3>
+
               <p>{user.text}</p>
+
             </div>
           ))}
+
         </div>
 
       </div>

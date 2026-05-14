@@ -9,6 +9,7 @@ import Header from "./components/Header"
 
 import AboutPage from "./Pages/AboutPage"
 import Case1 from "./Pages/Case1" // 👈 NOVO IMPORT
+import Case2 from "./pages/Case2"
 
 function Home() {
   return (
@@ -32,6 +33,8 @@ export default function App() {
 
         {/* 👇 NOVA ROTA DO CASE */}
         <Route path="/case1" element={<Case1 />} />
+        <Route path="/case2" element={<Case2 />} />
+
 
       </Routes>
     </BrowserRouter>

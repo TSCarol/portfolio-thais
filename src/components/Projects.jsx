@@ -40,12 +40,12 @@ export default function Projects() {
       link: "/case1",
     },
     {
-      tag: "Website",
+      tag: "Plataforma",
       img: Mockup2,
-      title: "Projeto 2",
-      description: "Descrição curta do projeto.",
-      details: "Descrição mais detalhada.",
-      link: "/",
+      title: "Conexões que Continuam",
+      description: "Uma plataforma criada para fortalecer relacionamentos",
+      details: "Uma plataforma criada para fortalecer conexões entre empreendedoras além dos eventos, reunindo networking, conteúdos, interações e experiências exclusivas em um único ambiente digital.",
+      link: "/case2",
     },
     {
       tag: "Dashboard",

@@ -1,5 +1,9 @@
 import { useEffect, useRef } from "react"
 
+import empresaIcon from "../assets/Empresa.svg"
+import phoneIcon from "../assets/Phone.svg"
+import userIcon from "../assets/User.svg"
+
 export default function Strategy() {
   const sectionRef = useRef(null)
 
@@ -48,22 +52,34 @@ export default function Strategy() {
 
         <div className="ecosystem-flow">
 
+          {/* EMPRESA */}
           <div className="eco-card active">
-            <div className="icon"></div>
+            <div className="icon-box">
+              <img src={empresaIcon} alt="Empresa" />
+            </div>
+
             <p>Empresa</p>
           </div>
 
           <span className="arrow">→</span>
 
+          {/* PLATAFORMA */}
           <div className="eco-card middle">
-            <div className="icon"></div>
+            <div className="icon-box">
+              <img src={phoneIcon} alt="Plataforma" />
+            </div>
+
             <p>Plataforma</p>
           </div>
 
           <span className="arrow">→</span>
 
+          {/* USUÁRIO */}
           <div className="eco-card">
-            <div className="icon"></div>
+            <div className="icon-box">
+              <img src={userIcon} alt="Usuário" />
+            </div>
+
             <p>Usuário</p>
           </div>
 

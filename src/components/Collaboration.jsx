@@ -1,5 +1,10 @@
 import { useEffect, useRef } from "react"
 
+/* ÍCONES */
+import StakeholdersIcon from "../assets/Stakeholders.svg"
+import DevIcon from "../assets/Dev.svg"
+import CheckIcon from "../assets/Check.svg"
+
 export default function CollaborationSection() {
 
   const cardsRef = useRef([])
@@ -27,19 +32,19 @@ export default function CollaborationSection() {
 
   const items = [
     {
-      icon: "👥",
+      icon: StakeholdersIcon,
       title: "Stakeholders",
       text: "Alinhamento de expectativas e regras de negócio"
     },
 
     {
-      icon: "🛠️",
+      icon: DevIcon,
       title: "Dev Team",
       text: "Viabilidade técnica e constraints de implementação"
     },
 
     {
-      icon: "✓",
+      icon: CheckIcon,
       title: "Validação",
       text: "Decisões baseadas em dados e feedback iterativo"
     }
@@ -53,7 +58,7 @@ export default function CollaborationSection() {
       <div className="collaboration-header">
 
         <span className="tag">
-        — COLABORAÇÃO
+          — COLABORAÇÃO
         </span>
 
         <h2>
@@ -79,7 +84,12 @@ export default function CollaborationSection() {
           >
 
             <div className="collaboration-icon">
-              {item.icon}
+
+              <img
+                src={item.icon}
+                alt={item.title}
+              />
+
             </div>
 
             <h3>{item.title}</h3>
